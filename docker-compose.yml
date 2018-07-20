@@ -1,0 +1,18 @@
+version: '2.0'
+
+services:
+
+  dashboard:
+    image: 172.29.227.90:6555/devops-dashboard:latest
+    container_name: devops-dashboard
+    ports:
+    - 3000:3000
+    depends_on:
+    - cors-proxy
+
+  cors-proxy:
+#    image: 172.29.227.90:6556/chrishelgert/hapi-rest-proxy:latest
+    image: chrishelgert/hapi-rest-proxy:latest
+    container_name: hungry_mahavira
+    ports:
+      - 8080:8080

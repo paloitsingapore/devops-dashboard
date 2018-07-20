@@ -1,0 +1,81 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "Your Team Dashboard",
+  "main": "pages/index.js",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "standard --verbose | snazzy && stylelint '**/*.js'",
+    "test": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielbayerlein/dashboard.git"
+  },
+  "keywords": [
+    "tv",
+    "dashboard"
+  ],
+  "author": "Daniel Bayerlein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielbayerlein/dashboard/issues"
+  },
+  "homepage": "https://github.com/danielbayerlein/dashboard#readme",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.5.1",
+    "dotenv-webpack": "^1.5.5",
+    "isomorphic-unfetch": "^2.0.0",
+    "js-base64": "^2.4.3",
+    "moment": "^2.22.1",
+    "next": "^5.1.0",
+    "npm": "^6.0.1",
+    "polished": "^1.9.2",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "recharts": "^1.0.0-beta.10",
+    "styled-components": "^3.2.5",
+    "tinytime": "^0.2.6",
+    "yup": "^0.24.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.1",
+    "stylelint": "^9.2.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.3.1"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "babel": {
+    "presets": [
+      "next/babel"
+    ],
+    "plugins": [
+      [
+        "styled-components",
+        {
+          "ssr": true,
+          "displayName": true,
+          "preprocess": false
+        }
+      ]
+    ]
+  },
+  "stylelint": {
+    "processors": [
+      "stylelint-processor-styled-components"
+    ],
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-styled-components"
+    ],
+    "syntax": "scss"
+  }
+}
